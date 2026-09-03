@@ -1,0 +1,43 @@
+{
+  "name": "dsh-stock-quote",
+  "version": "0.1.0",
+  "description": "DSH web plugin: a collapsible, draggable A-share quote widget pinned to the shell. Shows live index + individual-stock prices with change % and color, refreshed on a timer. Data from the public Tencent quote API.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "stock",
+    "quote",
+    "a-share",
+    "dashboard"
+  ],
+  "license": "MIT"
+}
